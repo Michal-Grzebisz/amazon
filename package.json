@@ -1,0 +1,29 @@
+{
+  "name": "amazon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec babel-node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michal-Grzebisz/amazon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michal-Grzebisz/amazon/issues"
+  },
+  "homepage": "https://github.com/Michal-Grzebisz/amazon#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.14.9",
+    "nodemon": "^2.0.12"
+  },
+  "description": ""
+}
