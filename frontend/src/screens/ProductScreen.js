@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import {detailsProduct} from '../actions/productActions'
 
 const ProductScreen = (props) => { 
     
-    const product = props.find(x => x._id === props.match.params.id)
+    const productDetails = useSelector(state => state.productDetails)
+    const {product, loading, error} = productDetails
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(detailsProduct())
+        return () => {
+
+        };
+    }, [])
 
     return (
         <div>
             <div className='back-to-result'>
                 <Link to='/'>Back to result</Link>
             </div>
+            {loading ? <div>Loading...</div>:
+            error? <div>{error}</div>:
+            (
             <div className="details">
                 <div className="details-image">
                     <img src={product.image} alt="product"/>
@@ -55,6 +69,8 @@ const ProductScreen = (props) => {
                     </ul>
                 </div>
             </div>
+
+            )}
             
         </div>
     )

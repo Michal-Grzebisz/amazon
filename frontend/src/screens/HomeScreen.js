@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
-import listProducts from '../actions/productActions'
+import {listProducts} from '../actions/productActions'
 
 const HomeScreen = (props) => {
   const productList = useSelector(state => state.productList);
@@ -13,7 +12,6 @@ const HomeScreen = (props) => {
     dispatch(listProducts())
   },[]);
 
-  console.log(products)
 
     return (
       loading? <div>Loading...</div>:
